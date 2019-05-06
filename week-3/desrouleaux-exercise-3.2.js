@@ -65,7 +65,7 @@ DatabaseFactory.prototype.createDatabase = function(properties) {
   }
 
   return new this.databaseClass(properties);
-};
+                                                                };
 
 
 //Created two functions which call the prototpes function created for DatabaseFactory
