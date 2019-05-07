@@ -42,6 +42,10 @@ function Oracle(properties) {
   this.server = properties.server ;
   this.version = properties.version
 }
+//Prototype function  added to Oracle to return properties as a string.
+Oracle.prototype.output = function (){
+  return `Oracle {\n   username: '${this.username}'\n   password: '${this.password}'\n   server: '${this.server}'\n   version: '${this.version}'\n}\n`;
+}
 
 //Here I have created a class constructor with three properties
 function Informix(properties) {
@@ -51,6 +55,10 @@ function Informix(properties) {
 
 }
 
+//Prototype function added to oracle to return properties as a string
+Informix.prototype.output = function (){
+  return `Informix {\n  username: '${this.username}'\n   password: '${this.password}'\n   server: '${this.server}'\n}\n`;
+}
 //Here I created an empty  constructor
 function DatabaseFactory() {}
 
@@ -89,10 +97,10 @@ var informix = informixFactory.createDatabase({
 
 
 //Log oracle
-console.log(oracle)
+console.log(oracle.output())
 
 //log informix
 
-console.log(informix)
+console.log(informix.output())
 // end program
 
