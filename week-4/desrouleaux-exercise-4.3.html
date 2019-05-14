@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 4.3</title>
+
+    <!-- jQuery reference -->
+    <script
+      type="text/javascript"
+
+      src=""
+      charset="UTF-8"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h4>
+      HTTP DELETE REQUEST
+    </h4>
+
+    <button id="delete">Delete!</button>
+    <script>
+      $(function() {
+
+        $("#delete").click(function(){
+          $.ajax({
+            url:"http://httpbin.org/delete",
+            type: "DELETE",
+
+            dataType:"json",
+            data:{username:"lance",password:"secret", email: 'ld@me.com'},
+
+            success:function(data,status){
+              console.log("username: "+ data.form.username + "\n email: "+data.form.email+ "\n Status: " + status);
+            }
+          })
+        })
+
+
+
+      });
+    </script>
+  </body>
+</html>
