@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 4.2</title>
+
+    <!-- jQuery reference -->
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+      charset="UTF-8"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h4>HTTP GET REQUEST</h4>
+    </header>
+
+    <button id="getIt" description = "get things">Get Things</button>
+    <script>
+      $(function () {
+      $("#getIt").click(function(){
+      $.get("https://dog.ceo/api/breeds/image/random", function(data,status) {
+        console.log("Data: "+ JSON.stringify(data) + "\n Status: "+ status)
+      });
+    });
+  });
+    </script>
+  </body>
+</html>
