@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 5.2 - The Proxy Pattern</title>
+
+    <!-- jquery Reference Library -->
+    <script
+      type="text/javascript"
+      src=""
+      charset="UTF-8"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <h2>Proxy Test</h2>
+    <button id="btnPress"> Run Test</button>
+
+    <span id = 'proxyExampleOne'></span>
+
+
+
+
+    <script>
+      $(function() {
+
+        var music = {
+                artist: "J.Cole",
+                song: "ATM",
+                display: function() {
+                $("#proxyExampleOne").append("<br />Artist: " + this.artist + "<br />" + "Song: "
+                + this.song);
+                }
+        };
+        $("#btnPress").click($.proxy(music, "display"));
+
+
+
+
+      });
+    </script>
+  </body>
+</html>
