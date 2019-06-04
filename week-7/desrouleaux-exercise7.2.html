@@ -1,0 +1,78 @@
+<!--
+============================================
+; Title: Exercise 7.2
+; Author: Lance Desrouleaux
+; Date:6.5.19
+;Modified by: Lance Desrouleaux
+; Description: Binding Examaple
+;===========================================
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous"
+  />
+    <script src="../knockout-3.5.0.js"></script>
+
+    <div role="main" class="container">
+
+      <br/><br/>
+
+      <h2>BINDING EXAMPLE </h2>
+
+      <div class="form-group">
+
+
+               <label for="txtFirstName">First Name: </label>
+                 <input type="text" data-bind="value: firstName" class="form-control"
+                  id="txxFirst"/>
+
+
+
+      </div>
+
+        <div data-bind="if:firstName">
+          <div class="form-group">
+          <label for="txtAuthor">Last Name: </label>
+           <input type="text" data-bind="value: lastName" class="form-control"
+            id="txtLast"/>
+
+
+          </div>
+      </div>
+
+      <br/>
+      <div data-bind="if:lastName">
+        <h2><span id="nameOutput" class="alert-success" data-bind="text:
+        fullName"></span></h2>
+         </div>
+
+      <br/>
+      <br/>
+
+
+     <script>
+        function personalViewModel() {
+          this.firstName = ko.observable("");
+         this.lastName = ko.observable("");
+         this.fullName = ko.pureComputed(function () {
+           return this.firstName() + ' ' + this.lastName();
+        }, this);
+
+
+      }
+       ko.applyBindings(new personalViewModel());
+     </script>
