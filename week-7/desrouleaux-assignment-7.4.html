@@ -56,17 +56,17 @@
           <table class="table table-dark table-striped table-hover">
           <thead>
           <tr>
-          <th>Title</th>
-          <th>Description</th>
+            <th>Title</th>
+            <th>Description</th>
           <th>Link</th>
 
           </tr>
           </thead>
           <tbody data-bind="foreach: tutorial">
-          <tr>
-          <td data-bind="text: title"></td>
-          <td data-bind=" text: description" ></td>
-          <td> <a data-bind="attr: {href: link}, style:{color: 'green'}" target="_blank">Link</a></td>
+            <tr>
+            <td data-bind="text: title"></td>
+            <td data-bind=" text: description" ></td>
+            <td> <a data-bind="attr: {href: link}, style:{color: 'green'}" target="_blank">Link</a></td>
 
           </tr>
           </tbody>
@@ -81,11 +81,11 @@
       function TutorialViewModel() {
         this.tutorial = ko.observableArray(
           [
-        {title: "Grade 1", description: "Chemistry ", link:"http://google.com"},
-        {title: "Grade 2",  description: "Biology", link:"http://apple.com"},
-        {title: "Grade 3",  description: "Mathmatics", link:"http://knockout.js"},
-        {title: "Grade 4",  description: "Dance", link:"http://nyt.com"},
-        {title: "Grade 5", description: "Music", link:"http://dreamer.com" }
+            {title: "Grade 1", description: "Chemistry ", link:"http://google.com"},
+            {title: "Grade 2",  description: "Biology", link:"http://apple.com"},
+            {title: "Grade 3",  description: "Mathmatics", link:"http://knockout.js"},
+            {title: "Grade 4",  description: "Dance", link:"http://nyt.com"},
+            {title: "Grade 5", description: "Music", link:"http://dreamer.com" }
         ]
         );
        }
